@@ -9,13 +9,16 @@ class BookList extends Component {
   renderList() {
     return this.props.books.map((book) => {
       return (
-        <li key={book.title} className='list-group-item'>{book.title}</li>
+        <li
+          key={book.title}
+          onClick={() => this.props.selectBook(book)}
+          className='list-group-item'>{book.title}
+        </li>
       );
     });
   }
 
   render() {
-    console.log(this.props.selectBook);
     return (
       <ul className='list-group col-sm-4'>
         {this.renderList()}
@@ -38,6 +41,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   // Whenever selectBook is called, the result should be passed
   // to all of our reducers
+  // selectBook key name is mapped to props.selectBook
   return bindActionCreators({ selectBook: selectBook }, dispatch)
 }
 

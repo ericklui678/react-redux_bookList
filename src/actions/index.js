@@ -3,5 +3,11 @@
   // through redux
 
 export function selectBook(book) {
-  console.log('book has been selected ', book.title);
+  // selectBook is an ActionCreator, it needs to return an action,
+  // an object with a type property
+  // actions have 2 values: type and payload
+  return {
+    type: 'BOOK_SELECTED',
+    payload: book
+  };
 }
