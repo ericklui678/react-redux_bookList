@@ -1,7 +1,7 @@
 // this reducer will return an array of book objects
 // for now, we are just returning a hard coded object that's not retrieving
   // from application state
-const BooksReducer = () => {
+export default function () {
   return [
     { title: 'Javascript: The Good Parts' },
     { title: 'Harry Potter' },
@@ -9,5 +9,3 @@ const BooksReducer = () => {
     { title: 'Eloquent Ruby' }
   ]
 }
-
-export default BooksReducer;
